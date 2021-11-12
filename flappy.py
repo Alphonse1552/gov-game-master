@@ -7,7 +7,7 @@ def draw_floor():
 def create_pipe():
 	random_pipe_pos = random.choice(pipe_height)
 	bottom_pipe = pipe_surface.get_rect(midtop = (700,random_pipe_pos))
-	top_pipe = pipe_surface.get_rect(midbottom = (700,random_pipe_pos - 300))
+	top_pipe = pipe_surface.get_rect(midbottom = (700,random_pipe_pos-800))
 	return bottom_pipe,top_pipe
 
 def move_pipes(pipes):

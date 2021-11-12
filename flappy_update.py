@@ -85,7 +85,7 @@ clock = pygame.time.Clock()
 game_font = pygame.font.Font('04B_19.ttf',40)
 
 # Game Variables 
-gravity = 0.25
+gravity = 0.4
 bird_movement = 0
 game_active = True
 score = 0

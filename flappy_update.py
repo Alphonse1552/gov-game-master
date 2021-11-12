@@ -99,14 +99,11 @@ floor_surface = pygame.image.load('assets/base.png').convert()
 floor_surface = pygame.transform.scale2x(floor_surface)
 floor_x_pos = 0
 
+
+
 bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
 bird_midflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
 bird_upflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
-
-if 16 > score > 14:
-	bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/nancy.png').convert_alpha())
-	bird_midflap = pygame.transform.scale2x(pygame.image.load('assets/nancy.png').convert_alpha())
-	bird_upflap = pygame.transform.scale2x(pygame.image.load('assets/nancy.png').convert_alpha())
 
 
 bird_frames = [bird_downflap,bird_midflap,bird_upflap]
@@ -202,6 +199,12 @@ while True:
 		if 16 > score > 14:
 			bg_surface = pygame.image.load('assets/housefloor.png').convert()
 			bg_surface = pygame.transform.scale2x(bg_surface)
+			bird_downflap= pygame.image.load('assets/nancy.png').convert()
+			bird_downflap = pygame.transform.scale2x(bird_downflap)
+			bird_midflap= pygame.image.load('assets/nancy.png').convert()
+			bird_midflap = pygame.transform.scale2x(bird_midflap)
+			bird_upflap= pygame.image.load('assets/nancy.png').convert()
+			bird_upflap = pygame.transform.scale2x(bird_upflap)
 
 	#	if 16 > score > 14:
 		#	bg_surface = pygame.image.load('assets/sub.png').convert()

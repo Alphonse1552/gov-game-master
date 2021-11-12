@@ -92,7 +92,7 @@ score = 0
 high_score = 0
 can_score = True
 
-bg_surface = pygame.image.load('assets/background-night.png').convert()
+bg_surface = pygame.image.load('assets/introhouse.png').convert()
 bg_surface = pygame.transform.scale2x(bg_surface)
 
 floor_surface = pygame.image.load('assets/base.png').convert()
@@ -102,6 +102,13 @@ floor_x_pos = 0
 bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
 bird_midflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
 bird_upflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
+
+if 16 > score > 14:
+	bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/nancy.png').convert_alpha())
+	bird_midflap = pygame.transform.scale2x(pygame.image.load('assets/nancy.png').convert_alpha())
+	bird_upflap = pygame.transform.scale2x(pygame.image.load('assets/nancy.png').convert_alpha())
+
+
 bird_frames = [bird_downflap,bird_midflap,bird_upflap]
 bird_index = 0
 bird_surface = bird_frames[bird_index]
@@ -177,13 +184,34 @@ while True:
 		pipe_score_check()
 		score_display('main_game')
 		#PUT ALL THE CHANGE IN BACKGROUNDS HERE aspect ratio is 288 x 512
-		if  5 > score > 1:
-			bg_surface = pygame.image.load('assets/background-night.png').convert()
+		if  2 > score > 1:
+			bg_surface = pygame.image.load('assets/introhouse.png').convert()
 			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 4 > score > 2:
+			bg_surface = pygame.image.load('assets/housecomit.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 7 > score > 5:
+			bg_surface = pygame.image.load('assets/sub.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 10 > score > 8:
+			bg_surface = pygame.image.load('assets/fullcommit.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 13 > score > 11:
+			bg_surface = pygame.image.load('assets/rules.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 16 > score > 14:
+			bg_surface = pygame.image.load('assets/housefloor.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+
+	#	if 16 > score > 14:
+		#	bg_surface = pygame.image.load('assets/sub.png').convert()
+		#	bg_surface = pygame.transform.scale2x(bg_surface)
+
 	else:
 		screen.blit(game_over_surface,game_over_rect)
 		high_score = update_score(score,high_score)
 		score_display('game_over')
+		score = 0
 
 
 	# Floor

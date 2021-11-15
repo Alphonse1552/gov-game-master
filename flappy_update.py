@@ -138,7 +138,7 @@ score_sound_countdown = 100
 SCOREEVENT = pygame.USEREVENT + 2
 pygame.time.set_timer(SCOREEVENT,100)
 
-while True:
+while 60 > score:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			pygame.quit()
@@ -196,10 +196,10 @@ while True:
 		if 10 > score > 8:
 			bg_surface = pygame.image.load('assets/fullcommit.png').convert()
 			bg_surface = pygame.transform.scale2x(bg_surface)
-		if 13 > score > 11:
+		if 14 > score > 11:
 			bg_surface = pygame.image.load('assets/rules.png').convert()
 			bg_surface = pygame.transform.scale2x(bg_surface)
-		if 16 > score > 14:
+		if 16 > score > 15:
 			bg_surface = pygame.image.load('assets/housefloor.png').convert()
 			bg_surface = pygame.transform.scale2x(bg_surface)
 			bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/nancy.png').convert_alpha())
@@ -233,8 +233,6 @@ while True:
 		if 31 > score > 29:
 			bg_surface = pygame.image.load('assets/senintrodebate.png').convert()
 			bg_surface = pygame.transform.scale2x(bg_surface)
-			bg_surface = pygame.image.load('assets/intosenate.png').convert()
-			bg_surface = pygame.transform.scale2x(bg_surface)
 			bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/chuck.png').convert_alpha())
 			bird_midflap = pygame.transform.scale2x(pygame.image.load('assets/chuck.png').convert_alpha())
 			bird_upflap = pygame.transform.scale2x(pygame.image.load('assets/chuck.png').convert_alpha())
@@ -243,16 +241,55 @@ while True:
 			bird_surface = bird_frames[bird_index]
 			BIRDFLAP = pygame.USEREVENT + 1
 			pygame.time.set_timer(BIRDFLAP,200)
+		if 34 > score > 32:
+			bg_surface = pygame.image.load('assets/confcomit.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+			bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
+			bird_midflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
+			bird_upflap = pygame.transform.scale2x(pygame.image.load('assets/bill.png').convert_alpha())
+			bird_frames = [bird_downflap,bird_midflap,bird_upflap]
+			bird_index = 0
+			bird_surface = bird_frames[bird_index]
+			BIRDFLAP = pygame.USEREVENT + 1
+			pygame.time.set_timer(BIRDFLAP,200)
+		if 37 > score > 35:
+			bg_surface = pygame.image.load('assets/confex.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 40 > score > 38:
+			bg_surface = pygame.image.load('assets/houseapp.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 43 > score > 41:
+			bg_surface = pygame.image.load('assets/senateapp.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 46 > score > 44:
+			bg_surface = pygame.image.load('assets/filibust.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+		if 55 > score > 47:
+			bg_surface = pygame.image.load('assets/prez.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+			bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/joe.png').convert_alpha())
+			bird_midflap = pygame.transform.scale2x(pygame.image.load('assets/joe.png').convert_alpha())
+			bird_upflap = pygame.transform.scale2x(pygame.image.load('assets/joe.png').convert_alpha())
+			bird_frames = [bird_downflap,bird_midflap,bird_upflap]
+			bird_index = 0
+			bird_surface = bird_frames[bird_index]
+			BIRDFLAP = pygame.USEREVENT + 1
+			pygame.time.set_timer(BIRDFLAP,200)
+		if 59 > score > 56:
+			bg_surface = pygame.image.load('assets/win.png').convert()
+			bg_surface = pygame.transform.scale2x(bg_surface)
+
 
 	#	if 16 > score > 14:
 		#	bg_surface = pygame.image.load('assets/sub.png').convert()
 		#	bg_surface = pygame.transform.scale2x(bg_surface)
 
 	else:
+		score = 0
 		screen.blit(game_over_surface,game_over_rect)
 		high_score = update_score(score,high_score)
 		score_display('game_over')
-		score = 0
+		
 
 
 	# Floor
